@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prediction</title>
+</head>
+
+<body>
+
+<div id="header">
+  <div align="center">
+    <h1>Bank Marketing Campaign</h1>
+    <p>Predict the churn of customer</p>
+  </div>
+<div id="content">
+  <div align="center">
+    <h1>Choose Variables </h1>
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+      <table width="70%" border="0" cellspacing="1" cellpadding="2">
+       <tr>
+         <th width="163" height="31" scope="col"><span style="text-align: center; font-style: normal;">Age</span></th>
+         <th width="202" scope="col"><input name="age" type="text" required placeholder="age" tabindex="1"/></th>
+         <th width="169" scope="col">job</th>
+         <th width="165" scope="col"><select name="job" required id="job" tabindex="2" placeholder="job" >
+           <option value="10">House Maid</option>
+           <option value="1">Services</option>
+           <option value="2">Admin</option>
+           <option value="3">Blue-collar</option>
+           <option value="4">Technician</option>
+           <option value="5">Retired</option>
+           <option value="6">Management</option>
+           <option value="7">Unemployed</option>
+           <option value="8">Self-employed</option>
+           <option value="-1">unknown</option>
+           <option value="9">Enterpreneur</option>
+           <option value="11">Student</option>
+         </select></th>
+         <th width="172" scope="col"><span style="text-align: left">Marital</span></th>
+         <th width="158" scope="col"><select name="marital" required id="marital" tabindex="3" placeholder="marital" >
+           <option value="1">Married</option>
+           <option value="2">Single</option>
+           <option value="3">Divorced</option>
+           <option value="-1">Unknown</option>
+         </select>
+         <span style="font-size: 18"></span>         <span style="color: #D6D6D6"></span></th>
+       </tr>
+     </table>
+      <p>&nbsp;</p>
+      <table width="70%" border="0" cellpadding="2" cellspacing="1">
+        <tr>
+          <th width="165" height="31" scope="col"><span style="text-align: center	">Education</span></th>
+          <th width="201" scope="col"><span style="text-align: left">
+            <select name="education" required id="education" tabindex="4" placeholder="education">
+              <option value="2">Basic-4 year</option>
+              <option value="3">Basic-6 year</option>
+              <option value="4">Basic-9 year</option>
+              <option value="5">High School</option>
+              <option value="6">Professional Course</option>
+              <option value="7">University Degree</option>
+              <option value="-1">Unkown</option>
+              <option value="1">illiterate</option>
+            </select>
+          </span></th>
+          <th width="166" scope="col"><span style="text-align: center">Month</span></th>
+          <th width="168" scope="col"><span style="text-align: center">
+            <select name="month" required id="month" tabindex="5" placeholder="month">
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">Augest</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </span></th>
+          <th width="170" scope="col"><span style="text-align: left"><span style="text-align: center"> </span> <span style="text-align: center">
+          <label for="day_of_week">Day of Week</label>
+          </span></span></th>
+          <th width="159" scope="col"><span style="font-size: 18"></span> <span style="color: #D6D6D6"><span style="text-align: center">
+            <select name="day_of_week" required id="day_of_week" tabindex="6">
+              <option value="1">Monday</option>
+              <option value="2">Truesday</option>
+              <option value="3">Wendesday</option>
+              <option value="4">Thursday</option>
+              <option value="5">Friday</option>
+            </select>
+          </span></span></th>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <table width="70%" border="0" cellpadding="2" cellspacing="1">
+        <tr>
+          <th width="164" height="31" scope="col"><span style="text-align: center">Credit is Default</span></th>
+          <th width="202" scope="col"><span style="text-align: center">
+            <select name="default" required id="default" tabindex="7" placeholder="default">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </span></th>
+          <th width="167" scope="col"><span style="text-align: center">Housing Loan</span></th>
+          <th width="166" scope="col"><span style="text-align: center">
+            <select name="housing" required id="housing" tabindex="8" placeholder="housing">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </span></th>
+          <th width="172" scope="col"><span style="text-align: left"><span style="text-align: center">Personal Loan </span></span></th>
+          <th width="158" scope="col"><span style="font-size: 18"><span style="text-align: center">
+            <select name="loan" required id="loan" tabindex="9">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </span></span></th>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <table width="70%" border="0" cellpadding="2" cellspacing="1">
+        <tr>
+          <th width="164" height="31" scope="col"><span style="text-align: center">Contact</span></th>
+          <th width="202" scope="col"><span style="text-align: center">
+            <select name="contact" required id="contact" tabindex="10">
+              <option value="1">Cellolar</option>
+              <option value="0">Tel</option>
+            </select>
+          </span></th>
+          <th width="167" scope="col"><span style="text-align: center">Duration(ms)</span></th>
+          <th width="166" scope="col"><span style="text-align: left">
+            <input name="duration" type="text" required id="duration" tabindex="11" placeholder="duration">
+          </span></th>
+          <th width="172" scope="col"><span style="text-align: left"><span style="text-align: center">No. Contact</span></span></th>
+          <th width="158" scope="col"><span style="text-align: center">
+            <input name="campaign" type="text" required id="textfield9" tabindex="12" placeholder="campaign">
+          </span></th>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <table width="70%" border="0" cellpadding="2" cellspacing="1">
+        <tr>
+          <th width="164" height="31" scope="col"><span style="text-align: center">Pass Day</span></th>
+          <th width="202" scope="col"><span style="text-align: center">
+            <input name="pdays" type="text" required id="textfield8" tabindex="13" placeholder="pdays">
+          </span></th>
+          <th width="167" scope="col">No. Contact- Prv</th>
+          <th width="166" scope="col"><span style="text-align: left">
+            <input name="previous" type="text" required id="textfield2" tabindex="14" placeholder="previous">
+          </span></th>
+          <th width="172" scope="col"><span style="text-align: left"><span style="text-align: center">Result Last Cam.</span></span></th>
+          <th width="158" scope="col"><span style="text-align: center">
+            <select name="poutcome" required id="poutcome" tabindex="15" placeholder="poutcome">
+              <option value="1">Success</option>
+              <option value="0">Failure</option>
+              <option value="-1">Non Exist</option>
+            </select>
+          </span></th>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <table width="70%" border="0" cellpadding="2" cellspacing="1">
+        <tr>
+          <th width="268" height="31" scope="col"><span style="text-align: center">Employement Variation Rate</span></th>
+          <th width="265" scope="col"><span style="text-align: center">
+            <input name="empvarrate" type="text" required id="textfield3" tabindex="16" placeholder="empvarrate">
+          </span></th>
+          <th width="244" scope="col">Consumer Confidence Index</th>
+          <th width="247" scope="col"><span style="text-align: left">
+            <input name="consconfidx" type="text" required id="cons.conf.idx" tabindex="17" placeholder="consconfidx">
+          </span></th>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p>
+	  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></p>
+    </form>
+    <h2>
+    The Prediction result is {{result}}
+    
+  </div>
+</body>
+</html>
