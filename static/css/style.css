@@ -9,7 +9,7 @@
 .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
 .btn-block { width: 100%; display:block; }
 
-* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+/* * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; } */
 
 html { width: 100%; height:100%; overflow:hidden; }
 
@@ -19,7 +19,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	background: #092756;
 	color: #fff;
-	font-size: 13px;
+	font-size: 12px;
 	text-align:left;
 	letter-spacing:1.2px;
 	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
@@ -32,7 +32,7 @@ body {
 }
 .login { 
 	position: absolute;
-	top: 40%;
+	top: 100%;
 	left: 50%;
 	margin: -150px 0 0 -150px;
 	width:400px;
@@ -42,7 +42,7 @@ body {
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
 input { 
-	width: 100%; 
+	width: 50%; 
 	margin-bottom: 10px; 
 	background: rgba(0,0,0,0.3);
 	border: none;
