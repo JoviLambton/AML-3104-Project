@@ -20,14 +20,8 @@
     <body>
        
           <center><h1>Model to Predict Client Subscription to Term Deposit</h1>
-    <!-- Main Input For Receiving Query to our ML -->
             <form action="{{ url_for('predict_datapoint')}}" method="post">
               <center>
-<!--
-              <input type="text" name="age" placeholder="Age" required="required" /><br>
-              <input type="text" name="balance" placeholder="Average Yearly Balance" required="required" /><br>
-          
---> 
 
 <table height="100%" width="800" border="1" cellspacing="1" cellpadding="2">
 <tr border="1"> 
@@ -133,52 +127,13 @@
               </select>
               <br><br>
               
-                            <!--
-              <th width="169" scope="col">Age</th>
-              <th width="165" scope="col"><select name="Age" required id="Age" tabindex="2" placeholder="days that passed by after the client was last contacted from a previous campaign" >
-                <option value="0"></option>
-                <option value="9">9</option>
-                <option value="11">10</option>
-              </select></th>
--->
               <br>
-<!--
-              age
-              balance
-              pdays
-              previous
-              job_retired_student
 
-              marital_single
-
-              education_primary_secondary
-
-              housing_yes
-              loan_yes
-              contact_cellular_telephone
-              month_feb_mar_apr_sep_oct_dec
-              poutcome_success
--->
-            <!--
-               <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
-               <input type="text" name="RH" placeholder="RH" required="required" /><br>
-               <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
-               <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
-               <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br> 
-               <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
-               <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
-               <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
-               <input type="text" name="Region" placeholder="Region" required="required" /><br>
-              -->
     
                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
             </form>
-          </tr></div></body></html></table>            <!--
-        <h2><br<br>
-         </h2></div>
-         The result is {{result}}
-        </h2>
-      -->
-      <h2>The predict result is {{result}}.</h2>
+          </tr></div></body></html></table>           
+
+      <h2>The predicted result is {{result}}.</h2>
        <body>
     </html>

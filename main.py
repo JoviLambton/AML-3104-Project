@@ -21,18 +21,8 @@ def index():
 @app.route('/predictdata', methods=['Get', 'Post'])
 def predict_datapoint():
     if request.method=='POST':
-        # Temperature=float(request.form.get('Temperature'))
-        # RH=float(request.form.get('RH'))
-        # Ws=float(request.form.get('Ws'))
-        # Rain=float(request.form.get('Rain'))
-        # FFMC=float(request.form.get('FFMC'))
-        # DMC=float(request.form.get('DMC'))
-        # ISI=float(request.form.get('ISI'))
-        # Classes=float(request.form.get('Classes'))
-        # Region=float(request.form.get('Region'))
-
-        # new_data_sc=standard_scaler.transform([[Temperature,RH,Ws,Rain,FFMC,DMC,ISI,Classes,Region]])
-        # result=ridge_model.predict(new_data_sc)
+        
+        # Get user input
         age = float(request.form.get('age'))
         balance = float(request.form.get('balance'))
         pdays = float(request.form.get('pdays'))
@@ -59,7 +49,7 @@ def predict_datapoint():
                 'contact' : [contact],
                 'month' : [month],
                 'poutcome' : [poutcome],
-                'default' : ['x'] # Added dummy value
+                'default' : ['x'] # Added dummy value, this feature is not used in prediction
                 })
 
         # Encode categorical data to numeric
@@ -73,6 +63,7 @@ def predict_datapoint():
         model_data['month_feb_mar_apr_sep_oct_dec'] = model_data['month'].apply(lambda value: 1 if value.lower() in ['feb', 'mar', 'apr', 'oct', 'sep', 'dec'] else 0)
         model_data['poutcome_success'] = model_data['poutcome'].apply(lambda value: 1 if value.lower() == 'success' else 0)
     
+        # Create dataframe for encoded features
         x_test = model_data[['age',
                         'balance',
                         'pdays',
