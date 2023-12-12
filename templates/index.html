@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!--
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+-->
+ 
+
+
+</head>
+
+    <body>
+       
+          <center><h1>Model to Predict Client Subscription to Term Deposit</h1>
+            <form action="{{ url_for('predict_datapoint')}}" method="post">
+              <center>
+
+<table height="100%" width="800" border="1" cellspacing="1" cellpadding="2">
+<tr border="1"> 
+  <td>
+              <label for="age">Age:</label><br>
+              <input type="text" id="age" name="age" required="required"><br>
+
+              <label for="balance">Balance:</label><br>
+              <input type="text" id="balance" name="balance" required="required"><br></td></tr>
+<tr border="1">
+  <td>
+              <label for="pdays">No. of days that passed by after the client was last contacted from a previous campaign:</label><br>
+              <input type="text" id="pdays" name="pdays" required="required"><br>
+      
+              <label for="previous">No. of contacts performed before this campaign and for this client:</label><br>
+              <input type="text" id="previous" name="previous" required="required"><br> </td></tr></table>
+
+
+              <table height="100% "width="800" border="1" cellspacing="1" cellpadding="2">
+                <tr><td>
+              <label for="job">Job:</label><br>
+              <select required id="job" name="job" required="required">
+                <option value="admin">Admin</option>
+                <option value="blue-collar">Blue Collar</option>
+                <option value="entrepreneur">Entrepreneur</option>
+                <option value="housemaid">Housemaid</option>
+                <option value="management">Management</option>
+                <option value="retired">Retired</option>
+                <option value="self-employed">Self-Employed</option>
+                <option value="services">Services</option>
+                <option value="student">Student</option>
+                <option value="technician">Technician</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="unknown">Unknown</option>
+              </select> 
+              <br><br>
+
+              <label for="marital">Marital Status:</label><br>
+              <select required id="marital" name="marital" required="required">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced or Widowed</option>
+              </select>
+              <br><br> 
+
+
+
+  
+              <label for="education">Highest Educational Attainment:</label><br>
+              <select required id="education" name="education" required="required">
+                <option value="primary">Primary</option>
+                <option value="secondary">Secondary</option>
+                <option value="tertiary">Tertiary</option>
+                <option value="unknown">Unknown</option>
+              </select>
+              <br><br>
+
+              <label for="housing">With housing loan?</label><br>
+              <select required id="housing" name="housing" required="required">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <br><br>
+
+              <label for="loan">With personal loan?</label><br>
+              <select required id="loan" name="loan" required="required">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <br><br>
+
+              <label for="contact">Contact communication type:</label><br>
+              <select required id="contact" name="contact" required="required">
+                <option value="cellular">Cellular</option>
+                <option value="telephone">Telephone</option>
+                <option value="unknown">Unknown</option>
+              </select>
+              <br><br>
+
+              <label for="month">Last contact month:</label><br>
+              <select required id="month" name="month" required="required">
+                <option value="jan">Jan</option>
+                <option value="feb">Feb</option>
+                <option value="mar">Mar</option>
+                <option value="apr">Apr</option>
+                <option value="may">May</option>
+                <option value="jun">Jun</option>
+                <option value="jul">Jul</option>
+                <option value="aug">Aug</option>
+                <option value="sep">Sep</option>
+                <option value="oct">Oct</option>
+                <option value="nov">Nov</option>
+                <option value="dec">Dec</option>                
+              </select>
+              <br><br>
+
+              <label for="poutcome">Outcome of the previous marketing campaign:</label><br>
+              <select required id="poutcome" name="poutcome" required="required">
+                <option value="success">Success</option>
+                <option value="failure">Failure</option>
+                <option value="other">Other</option>
+                <option value="unknown">Unknown</option>
+              </select>
+              <br><br>
+              
+              <br>
+
+    
+               <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+          </tr></div></body></html></table>           
+
+      <h2>The predicted result is {{result}}.</h2>
+       <body>
+    </html>
