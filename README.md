@@ -25,7 +25,7 @@
 - F1 Score: The F1 score on the test set is 0.79, providing a balanced measure of precision and recall. The weighted average is 0.79.
 In summary, the Decision Tree model exhibits decent performance on the training set, as evidenced by balanced precision, recall, and F1 score. However, on the test set, precision for positive instances is relatively low, suggesting the model's struggle in correctly identifying positive cases. The choice of metrics depends on the specific goals and priorities of the classification problem at hand.
 
-<b>Input Data (17 Variables):<b>
+<b>Input Data (17 Variables):</b>
 - 1 - age (numeric)
 - 2 - job : type of job (categorical: "admin.","unknown","unemployed","management","housemaid","entrepreneur","student","blue-collar","self-employed","retired","technician","services")
 - 3 - marital : marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed)
