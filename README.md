@@ -25,7 +25,7 @@
 - F1 Score: The F1 score on the test set is 0.79, providing a balanced measure of precision and recall. The weighted average is 0.79.
 In summary, the Decision Tree model exhibits decent performance on the training set, as evidenced by balanced precision, recall, and F1 score. However, on the test set, precision for positive instances is relatively low, suggesting the model's struggle in correctly identifying positive cases. The choice of metrics depends on the specific goals and priorities of the classification problem at hand.
 
-<b>Source:</b>
+<b>Data Source:</b>
 - Moro,S., Rita,P., and Cortez,P.. (2012). Bank Marketing. UCI Machine Learning Repository. https://doi.org/10.24432/C5K306.
 
 <b>App Link:</b>
